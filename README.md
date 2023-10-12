@@ -19,3 +19,20 @@ Saiba mais em: https://s3.glbimg.com/v1/AUTH_8b29beb0cbe247a296f902be2fe084b6/20
 
 
 > Considerando as limitações, desafios e soluções existentes, COMO AMPLIAR A CONECTIVIDADE DO ESTADO DO AMAZONAS?
+
+# CRITÉRIOS DE AVALIAÇÃO DO PROJETO
+
+## CRIATIVIDADE E ORIGINALIDADE
+O quão o projeto apresentado demonstra originalidade e criatividade, não apresentando apenas uma cópia de outras soluções já existentes em diferentes segmentos;
+
+## APLICABILIDADE
+O quão o projeto apresentado demonstra potencial para solucionar problemas atinentes ao desafio proposto;
+
+## QUALIDADE DO PROTÓTIPO
+O quão o protótipo exibido no vídeo de demonstração apresenta aparente qualidade em suas funcionalidades;
+
+## TECNOLOGIA
+O quão a solução faz uso de tecnologias consideradas disruptivas e que de fato pode oferecer escala ao projeto;
+
+## ELEMENTO FUTURO
+O quão a solução apresentada demonstra elementos ligados a tendências futuristas.
