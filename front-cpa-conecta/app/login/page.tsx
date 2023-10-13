@@ -1,4 +1,4 @@
-// signup
+// signin
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function SignUp() {
+export default function SignIn() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
 
