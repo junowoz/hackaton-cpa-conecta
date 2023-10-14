@@ -7,15 +7,17 @@ import Link from "next/link";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleCpfChange = (e: any) => {
     const formattedCpf = e.target.value
@@ -28,8 +30,21 @@ export default function SignIn() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://hackaton-42r9.onrender.com/auth/token",
+        { cpf, password }
+      );
+      // Save the token to local storage or cookie and redirect to dashboard or home
+      localStorage.setItem("token", response.data.access_token);
+      console.log("response", response);
+      console.log("entrou!");
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
   };
 
   return (
@@ -64,7 +79,11 @@ export default function SignIn() {
                 onChange={handlePasswordChange}
               />
             </div>
-            <Button className="mt-4">Entrar</Button>
+            <Link href={"dashboard"}>
+              <Button type="submit" className="mt-4">
+                Entrar
+              </Button>
+            </Link>
           </form>
         </CardContent>
         <CardFooter className="flex justify-center">

@@ -7,15 +7,18 @@ import Link from "next/link";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const router = useRouter();
 
   const handleCpfChange = (e: any) => {
     const formattedCpf = e.target.value
@@ -28,8 +31,23 @@ export default function SignUp() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleEmailChange = (e: any) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    try {
+      await axios.post("https://hackaton-42r9.onrender.com/user/", {
+        cpf,
+        email,
+        password,
+      });
+      router.push("/dashboard");
+      console.log("cadastrado!");
+    } catch (error) {
+      console.error("Error registering:", error);
+    }
   };
 
   return (
@@ -53,10 +71,10 @@ export default function SignUp() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="cpf" className="text-base">
+              <label htmlFor="email" className="text-base">
                 Email
               </label>
-              <Input type="email" />
+              <Input type="email" value={email} onChange={handleEmailChange} />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="senha" className="text-base">
@@ -69,7 +87,11 @@ export default function SignUp() {
                 onChange={handlePasswordChange}
               />
             </div>
-            <Button className="mt-4">Cadastrar</Button>
+            <Link href={"dashboard"}>
+              <Button className="mt-4">
+                Cadastrar
+              </Button>
+            </Link>
           </form>
         </CardContent>
         <CardFooter className="flex justify-center">
