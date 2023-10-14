@@ -1,5 +1,9 @@
 # DESAFIO AMAZÔNIA QUE EU QUERO
 
+## Stack usado: Nextjs, e FastAPI
+
+## Descrição do desafio
+
 Estamos ficando cada vez mais dependentes da internet e dos acessórios, como celulares, computadores, notebooks, tablets. Uma pesquisa desenvolvida pelo Comitê Gestor da Internet do Brasil apontou que o número de pessoas com acesso à internet cresceu durante a pandemia.
 
 A Amazônia ainda vive à margem da era digital. Segundo dados da Pesquisa Nacional por Amostra de Domicílios (Pnad), enquanto no Brasil o percentual de domicílios com internet banda larga é de 77,9%, na região o número é de 58,5%. O mesmo acontece quando o assunto é o acesso ao 3G e 4G em áreas urbanas: no Brasil a porcentagem é de 70,7%, na Amazônia de 68,7% — com piora nas áreas rurais.
