@@ -18,14 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <nav className="items-center bg-neutral-100 flex justify-between px-10 py-5">
+    <html lang="en" className="bg-[url('/bg/bg1.svg')]">
+      <body className={`flex flex-col min-h-screen ${inter.className}`}>
+        <nav className="items-center bg-neutral-50 flex justify-between px-10 py-5">
           <Link href="/">
             <Image
               loading="lazy"
               src="/amazoniaonline.svg"
-              alt="Mapa"
+              alt="Logo"
               width={50}
               height={50}
               className="aspect-square object-cover object-center w-[50px] h-[50px]"
@@ -35,7 +35,14 @@ export default function RootLayout({
             <Button className="">Entrar</Button>
           </Link>
         </nav>
-        {children}
+        <div className="flex-grow">{children}</div>
+        <footer className="flex p-6 items-center justify-center">
+          <div className="flex flex-row gap-2 text-white items-center justify-center">
+            <strong>Campus Party Amazônia</strong>
+            <strong>-</strong>
+            <strong>Hackathon: Projeto Amazônia Online</strong>
+          </div>
+        </footer>
       </body>
     </html>
   );
